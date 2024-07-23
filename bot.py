@@ -13,7 +13,7 @@ intents.message_content = True  # 메시지 내용을 읽기 위해 추가
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # 메시지를 삭제할 특정 채널 ID
-TARGET_CHANNEL_ID = 123456789012345678  # 여기에 삭제할 채널의 ID를 입력하세요.
+TARGET_CHANNEL_ID = 1264999351923773531  # 여기에 삭제할 채널의 ID를 입력하세요.
 
 async def clean_channel(channel):
     # 채널의 모든 메시지 가져오기
@@ -58,4 +58,5 @@ async def on_message(message):
     # 다른 명령어 처리와 충돌하지 않도록 on_message를 오버라이드 할 때 필요
     await bot.process_commands(message)
 
-bot.run(os.getenv('DISCORD_TOKEN'))
+access_token = os.environ["BOT_TOKEN"]
+bot.run(access_token)
